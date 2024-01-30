@@ -6,9 +6,6 @@ load_dotenv()
 
 MODEL_NAME = os.getenv("MODEL_NAME")
 
-for i in ollama.list()['models']:
-    print(i['name'])
-
 stream = ollama.chat(
     model=MODEL_NAME,
     messages=[{'role': 'user', 'content': 'Question: Why is the sky blue?'}],
